@@ -1,0 +1,365 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, "Noto Sans Thai", sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+.container {
+    width: min(1400px, 94%);
+    margin: auto;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-inner {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #4f46e5
+    );
+
+    color: white;
+    padding: 55px 0;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.hero h1 {
+    margin: 0 0 12px;
+    font-size: clamp(28px, 5vw, 46px);
+}
+
+.hero p {
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+#searchInput {
+    width: min(700px, 100%);
+    padding: 16px 20px;
+    border: 0;
+    border-radius: 14px;
+    font-size: 17px;
+    outline: none;
+}
+
+
+/* =========================
+   FILTER
+========================= */
+
+.filter-section {
+    background: white;
+    margin-top: 25px;
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.06);
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.filter-grid label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.filter-grid input,
+.filter-grid select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    font-size: 14px;
+}
+
+.checkbox-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.checkbox-grid label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section-header {
+    margin: 30px 0 15px;
+}
+
+.section-header h2 {
+    margin-bottom: 5px;
+}
+
+.section-header p {
+    margin: 0;
+    color: #6b7280;
+}
+
+
+/* =========================
+   MAP LAYOUT
+========================= */
+
+.map-layout {
+    display: grid;
+    grid-template-columns: 42% 58%;
+    gap: 20px;
+    align-items: start;
+}
+
+
+/* =========================
+   DORM GRID
+========================= */
+
+.dorm-grid {
+    display: grid;
+    gap: 15px;
+}
+
+.dorm-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0,0,0,.07);
+    transition: transform .2s, box-shadow .2s;
+}
+
+.dorm-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,.12);
+}
+
+.dorm-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.dorm-content {
+    padding: 18px;
+}
+
+.dorm-name {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.dorm-address,
+.dorm-distance,
+.dorm-rating {
+    margin: 7px 0;
+    color: #4b5563;
+    font-size: 14px;
+}
+
+.dorm-price {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.dorm-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 12px 0;
+}
+
+.feature-tag {
+    background: #eef2ff;
+    padding: 5px 9px;
+    border-radius: 7px;
+    font-size: 12px;
+}
+
+
+/* =========================
+   MAP
+========================= */
+
+.map-container {
+    position: sticky;
+    top: 85px;
+}
+
+#map {
+    width: 100%;
+    height: calc(100vh - 110px);
+    min-height: 550px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,.10);
+    background: #e5e7eb;
+}
+
+
+/* =========================
+   EMPTY / LOADING
+========================= */
+
+.empty-state {
+    background: white;
+    padding: 45px 20px;
+    text-align: center;
+    border-radius: 16px;
+    color: #6b7280;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: 0;
+    border-radius: 9px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.dorm-content button {
+    width: 100%;
+    background: #2563eb;
+    color: white;
+    margin-top: 10px;
+}
+
+
+/* =========================
+   MAP POPUP
+========================= */
+
+.leaflet-popup-content {
+    min-width: 220px;
+}
+
+.map-popup-title {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.map-popup-price {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.map-popup-distance {
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .filter-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .map-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .map-container {
+        position: static;
+        order: -1;
+    }
+
+    #map {
+        height: 400px;
+        min-height: 400px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .filter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 40px 0;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .filter-section {
+        padding: 16px;
+    }
+
+    .checkbox-grid {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #map {
+        height: 350px;
+    }
+
+}
+
